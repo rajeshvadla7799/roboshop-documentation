@@ -8,6 +8,7 @@ fetch("/api/catalogue/products")
       div.className = "card";
 
       div.innerHTML = `
+        <img src="images/${p.image}" />
         <h3>${p.name}</h3>
         <p>${p.description}</p>
         <strong>₹${p.price}</strong>
