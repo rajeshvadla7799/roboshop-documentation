@@ -1,0 +1,6 @@
+catalogue/
+ ├── server.js
+ ├── package.json
+ ├── Dockerfile
+ └── schema/
+     └── master-data.js
