@@ -3,7 +3,7 @@ version: '3.8'
 services:
 
   catalogue:
-    build: ./catalogue
+    build: ./Catalogue
     image: catalogue:1.0.0
     container_name: catalogue
     depends_on:
@@ -27,7 +27,7 @@ services:
       - user
 
   mongodb:
-    build: ./mongodb
+    build: ./Mongodb
     image: mongodb:1.0.0
     container_name: mongodb
 
