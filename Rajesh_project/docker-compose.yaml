@@ -27,7 +27,7 @@ services:
       - user
 
   mongodb:
-    build: ./Mongodb
+    build: ./MongoDB
     image: mongodb:1.0.0
     container_name: mongodb
 
