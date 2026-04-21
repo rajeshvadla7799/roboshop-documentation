@@ -1,35 +1,41 @@
+version: '3.8'
+
 services:
+
   catalogue:
     build: ./catalogue
     image: catalogue:1.0.0
     container_name: catalogue
     depends_on:
-    - mongodb
+      - mongodb
+
   user:
     build: ./user
     image: user:1.0.0
     container_name: user
     depends_on:
-    - redis
+      - redis
+
   frontend:
     build: ./frontend
     image: frontend:1.0.0
     container_name: frontend
     ports:
-    - "80:80"
+      - "80:80"
     depends_on:
-    - catalogue
-    - user
+      - catalogue
+      - user
+
   mongodb:
-  build: ./mongodb
-  image: mongodb:1.0.0
-  container_name: mongodb
-redis:
-image: redis:7.0
-container_name: redis
+    build: ./mongodb
+    image: mongodb:1.0.0
+    container_name: mongodb
+
+  redis:
+    image: redis:7.0
+    container_name: redis
 
 networks:
   default:
     driver: bridge
     name: roboshop
-    external: false 
